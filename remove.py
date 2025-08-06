@@ -14,9 +14,10 @@ def remove_background(input_path, output_path):
         img = Image.open(io.BytesIO(output_bytes)).convert("RGBA")
         img.save(output_path)
 
-# Process all files starting with 'red_'
 for filename in os.listdir(ASSETS_DIR):
     filepath = os.path.join(ASSETS_DIR, filename)
     output_path = filepath  # Overwrite original
     remove_background(filepath, output_path)
         
+# remove_background(os.path.join(ASSETS_DIR, "game.png"), 
+#                   os.path.join(ASSETS_DIR, "game.png"))

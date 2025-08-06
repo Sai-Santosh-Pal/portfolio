@@ -47,6 +47,30 @@
           border-radius: 9999px;
           pointer-events: none;
         }
+        .glow-image {
+  position: relative;
+  display: inline-flex;
+}
+
+.glow-image::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(168,85,247, 0.4) 0%, transparent 70%);
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(50px);
+}
+
+.glow-image img {
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+}
       </style>
     <div class="flex justify-center">
         <div class="header m-5 flex h-[10%] p-1 w-[50%] rounded-xl border-solid border-1 border-stone-900 gap-2 justify-evenly max-w-[600px] bg-[#00000085]">
@@ -63,7 +87,7 @@
             </div>
         </div>
     </div>
-    <div class="hero h-[calc(100vh-100px)] flex items-center flex-col justify-center">
+    <div class="hero h-screen md:h-[calc(100vh-100px)]  flex items-center flex-col justify-center">
         <div class="gradient-glow"></div>
 
         <div class="title text-6xl md:text-7xl w-[98%] text-center">
@@ -82,7 +106,7 @@
         </div>
     </div>
     <div class="about flex w-[100%] items-center justify-center h-[90vh] mb-20">
-        <div class="w-[90%] flex flex-col md:flex-row max-w-400 h-[90vh] border-1 border-stone-900 rounded-xl items-center justify-center">
+        <div class="w-[90%] flex flex-col md:flex-row max-w-400 gap-4 h-[90vh] border-1 border-stone-900 rounded-xl items-center justify-center">
              <div class="text text-center md:text-left w-[90%] max-w-170">
                 <div class="title">
                     <h1 class="md:text-8xl text-6xl tracking-tighter font-bold">Who Am I?</h1>
@@ -106,10 +130,20 @@
                     </div>
                 </div>
              </div>
-             <div class="image w-[90] md:w-[30%] h-full items-center flex justify-center">
+             <div class="image glow-image w-[90] md:w-[30%] h-full items-center flex justify-center">
                 <img src="assets/game.png" alt="" srcset="">
              </div>
         </div>
     </div>
+    <!-- <div class="experience flex flex-col md:flex-row gap-20 w-[100%] justify-center items-center h-[90vh] mb-20 pt-20"> 
+        <div class="inner-exp flex flex-col md:flex-row gap-[30px] md:gap-[100px]">
+            <div class="left">
+                <h1 class="md:text-8xl text-6xl tracking-tighter font-bold">Experience</h1>
+            </div>
+            <div class="right flex h-[90vh] items-center">
+                <img src="assets/coding.png">
+            </div>
+        </div>
+    </div> -->
 </body>
 </html>
