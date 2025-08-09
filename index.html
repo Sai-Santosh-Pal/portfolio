@@ -136,7 +136,7 @@
              </div>
         </div>
     </div>
-    <div class="experience flex flex-col md:flex-row w-[100%] justify-center items-center h-[90vh] mt-[400px] md:mt-0 mb-20 pt-20"> 
+    <div class="experience flex flex-col md:flex-row w-[100%] justify-center items-center mt-[150px] md:mt-0 mb-20 pt-20"> 
         <div class="inner-exp flex flex-col md:flex-row-reverse gap-[30px] md:gap-[200px]">
             <div class="left">
                 <h1 class="md:text-8xl text-6xl tracking-tighter font-bold mb-10 text-center md:text-left">Experience</h1>
@@ -180,5 +180,90 @@
             </div>
         </div>
     </div>
+    <!-- Projects Section -->
+<section id="projects" class="py-16 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-extrabold text-white mb-10">Projects</h2>
+    
+    <div id="projects-scroll" 
+         class="flex space-x-6 overflow-x-auto scrollbar-hide"
+         style="scroll-behavior: smooth;">
+      
+      <!-- Project Card -->
+      <div class="flex-shrink-0 w-80 bg-black/40 border border-white/10 rounded-xl p-4 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
+        <img src="https://via.placeholder.com/300x180" alt="Project 1" class="rounded-lg mb-4">
+        <h3 class="text-white text-lg font-semibold">Project One</h3>
+        <p class="text-gray-400 text-sm">One-line description of project one.</p>
+      </div>
+      
+      <!-- Project Card -->
+      <div class="flex-shrink-0 w-80 bg-black/40 border border-white/10 rounded-xl p-4 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
+        <img src="https://via.placeholder.com/300x180" alt="Project 2" class="rounded-lg mb-4">
+        <h3 class="text-white text-lg font-semibold">Project Two</h3>
+        <p class="text-gray-400 text-sm">One-line description of project two.</p>
+      </div>
+      
+      <!-- Project Card -->
+      <div class="flex-shrink-0 w-80 bg-black/40 border border-white/10 rounded-xl p-4 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
+        <img src="https://via.placeholder.com/300x180" alt="Project 3" class="rounded-lg mb-4">
+        <h3 class="text-white text-lg font-semibold">Project Three</h3>
+        <p class="text-gray-400 text-sm">One-line description of project three.</p>
+      </div>
+
+
+      <div class="flex-shrink-0 w-80 bg-black/40 border border-white/10 rounded-xl p-4 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
+        <img src="https://via.placeholder.com/300x180" alt="Project 2" class="rounded-lg mb-4">
+        <h3 class="text-white text-lg font-semibold">Project Two</h3>
+        <p class="text-gray-400 text-sm">One-line description of project two.</p>
+      </div>
+      
+      <!-- Project Card -->
+      <div class="flex-shrink-0 w-80 bg-black/40 border border-white/10 rounded-xl p-4 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
+        <img src="https://via.placeholder.com/300x180" alt="Project 3" class="rounded-lg mb-4">
+        <h3 class="text-white text-lg font-semibold">Project Three</h3>
+        <p class="text-gray-400 text-sm">One-line description of project three.</p>
+      </div>
+
+      <!-- Add more cards as needed -->
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+</style>
+
+<script>
+const scrollContainer = document.getElementById('projects-scroll');
+let scrollSpeed = 4;
+let scrollInterval;
+
+function startAutoScroll() {
+  scrollInterval = setInterval(() => {
+    scrollContainer.scrollLeft += scrollSpeed;
+    if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+      scrollContainer.scrollLeft = 0; // loop back
+    }
+  }, 20);
+}
+
+function stopAutoScroll() {
+  clearInterval(scrollInterval);
+}
+
+scrollContainer.addEventListener('mouseenter', stopAutoScroll);
+scrollContainer.addEventListener('mouseleave', startAutoScroll);
+
+startAutoScroll();
+</script>
+
 </body>
 </html>
